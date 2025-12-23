@@ -1,4 +1,13 @@
 {
+  "name": "e-library-backend",
+  "description": "",
+  "author": "3AAA",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "dev": "node --watch server.js",
+    "package-update": "npx npm-check-updates -u && npm install"
+  },
   "dependencies": {
     "bcrypt": "^6.0.0",
     "cors": "^2.8.5",
@@ -6,7 +15,8 @@
     "express": "^5.2.1",
     "jsonwebtoken": "^9.0.3",
     "mongoose": "^9.0.1",
-    "morgan": "^1.10.1"
+    "morgan": "^1.10.1",
+    "nodemon": "^3.1.11"
   }
 }
 
