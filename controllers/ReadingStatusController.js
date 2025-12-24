@@ -43,7 +43,28 @@ const GetBookStatus = async (req, res) => {
 
 
 
+const DeleteReadingStatus = async (req, res) => {
+    try {
+        const { bookId } = req.params
+        const userId = req.user.id
+        
+        const deleted = await ReadingStatus.findOneAndDelete({ userId, bookId })
+        
+        if (!deleted) {
+            return res.status(404).send({ msg: "Reading status not found" })
+        }
+        
+        res.send({ msg: "Reading status deleted", data: deleted })
+        
+    } catch (error) {
+        console.log(error)
+        res.status(500).send({ status: 'Error', msg: 'Failed to delete reading status' })
+    }
+}
+
+
 module.exports = {
     SetReadingStatus,
-    GetBookStatus
+    GetBookStatus,
+    DeleteReadingStatus
 }
