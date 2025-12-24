@@ -22,8 +22,28 @@ const SetReadingStatus = async (req, res) => {
     }
 }
 
+const GetBookStatus = async (req, res) => {
+    try {
+        const { bookId } = req.params
+        const userId =  req.user.id
+        
+        const readingStatus = await ReadingStatus.findOne ({ userId, bookId })
+        
+        if (!readingStatus) {
+            return res.status(404).send({ msg: "No reading status found for this boook" })
+        }
+        
+        res.send(readingStatus)
+        
+    } catch (error) {
+        console.log(error)
+        res.status(500).send({ status: 'Error',msg: ' Failed to get reading status' })
+    }
+}
+
 
 
 module.exports = {
-    SetReadingStatus
+    SetReadingStatus,
+    GetBookStatus
 }
