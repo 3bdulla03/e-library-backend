@@ -13,7 +13,10 @@ const readingStatusSchema = new mongoose.Schema({
     type: String,
     enum: ["Reading", "Finished", "ToRead", null],
   },
+}, {
+  timestamps: true
 })
+readingStatusSchema.index({ userId: 1, bookId: 1 } , { unique: true } )
 
 const ReadingStatus = mongoose.model("ReadingStatus", readingStatusSchema)
 
