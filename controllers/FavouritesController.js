@@ -19,6 +19,42 @@ const AddToFavorites = async (req, res) => {
     }
 }
 
+const GetAllFavorites = async (req, res) => {
+
+    try {
+        const userId = req.user.id
+        
+        const favorites = await Favorites.find({ userId })
+        res.send(favorites)
+        
+    } catch (error) {
+        console.log(error)
+        res.status(500).send({ status: 'Error', msg: 'Failed to get favorites' })
+    }
+}
+
+const RemoveFromFavorites = async (req, res) => {
+    try {
+        const { bookId } = req.params
+        const userId = req.user.id
+        
+        const deleted = await Favorites.findOneAndDelete({ userId, bookId })
+        
+        if (!deleted) {
+            return res.status(404).send({ msg: 'Favorite not found' })
+        }
+        
+        res.send({ msg: 'Removed from favorites', data: deleted })
+        
+    } catch (error) {
+        console.log(error)
+        res.status(500).send({ status: 'Error', msg: 'Failed to remove from favorites' })
+    }
+    
+}
+
 module.exports = {
-    AddToFavorites
+    AddToFavorites,
+    GetAllFavorites,
+    RemoveFromFavorites
 }
