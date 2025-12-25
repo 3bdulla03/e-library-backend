@@ -9,7 +9,11 @@ const favoritesSchema = new mongoose.Schema({
     type: String,
     required: false,
   },
+},{
+  timestamps:true
 })
+
+favoritesSchema.index({ userId: 1, bookId: 1 }, { unique: true })
 
 const Favorites = mongoose.model("Favorites", favoritesSchema)
 
