@@ -50,11 +50,11 @@ const RemoveFromFavorites = async (req, res) => {
         console.log(error)
         res.status(500).send({ status: 'Error', msg: 'Failed to remove from favorites' })
     }
-    
+
 }
 
 module.exports = {
     AddToFavorites,
-    GetAllFavorites,
+     GetAllFavorites,
     RemoveFromFavorites
 }
