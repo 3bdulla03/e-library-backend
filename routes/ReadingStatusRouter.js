@@ -10,6 +10,18 @@ router.post(
     controller.SetReadingStatus
 )
 
+router.get(
+    '/:bookId' ,
+    middleware.stripToken,
+    middleware.verifyToken ,
+    controller.GetBookStatus
+)
 
+router.delete(
+    '/:bookId' ,
+    middleware.stripToken,
+    middleware.verifyToken ,
+    controller.DeleteReadingStatus
+)
 
 module.exports = router
