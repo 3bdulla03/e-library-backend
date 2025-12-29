@@ -42,6 +42,7 @@ const verifyToken = (req, res, next) => {
         let payload = jwt.verify(token, APP_SECRET)
         if (payload) {
             res.locals.payload = payload
+            req.user = payload
             return next()
         }
         res.status(401).send({status: 'Error', msg: 'unauthorized'})
