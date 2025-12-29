@@ -2,13 +2,13 @@ const router = require('express').Router()
 const controller = require('../controllers/ReviewsController')
 const middleware = require('../middleware')
 
-router.get('/', 
+router.get('/:bookId', 
     middleware.stripToken,
     middleware.verifyToken,
     controller.GetReviews
 )
 
-router.post('/',
+router.post('/:bookId',
     middleware.stripToken,
     middleware.verifyToken,
     controller.CreateReview
