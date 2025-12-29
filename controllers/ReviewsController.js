@@ -2,8 +2,8 @@ const Review = require('../models/review')
 
 const GetReviews = async (req, res) => {
     try {
-        const review = await Review.find().populate('user')
-        res.send(review)}
+        const reviews = await Review.find({ bookId:req.params.bookId }).populate('user')
+        res.send(reviews)}
     catch (error) {
         throw error
     }    
@@ -11,7 +11,11 @@ const GetReviews = async (req, res) => {
 
 const CreateReview = async (req, res) => {
     try {
-        const review = await Review.create(req.body)
+        const review = await Review.create({
+            message: req.body.message,
+            bookId: req.params.bookId,
+            user: req/user.id
+        })
         res.send(review)
     } catch (error) {
         throw error
