@@ -48,10 +48,6 @@ const CheckSession = async (req, res) => {
 }
 module.exports = {
   Register,
-<<<<<<< HEAD
-  Login
-=======
   Login,
   CheckSession,
->>>>>>> f4be744 (finished auth)
 }
