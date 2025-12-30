@@ -3,7 +3,7 @@ const controller = require('../controllers/AuthController')
 const middleware = require('../middleware')
 
 router.post('/register', controller.Register)
-router.post('/signin', controller.Login)
+router.post('/login', controller.Login)
 
 router.get(
   '/session',
