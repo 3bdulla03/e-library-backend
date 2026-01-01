@@ -5,21 +5,21 @@ const middleware = require('../middleware')
 
 
 router.post(
-    '/Favorites',
+    '/',
     middleware.stripToken,
     middleware.verifyToken ,
     controller.AddToFavorites
 )
 
 router.get(
-    '/Favorites',
+    '',
     middleware.stripToken,
     middleware.verifyToken ,
     controller.GetAllFavorites
 )
 
 router.delete(
-    '/Favorites/:bookId',
+    '/:bookId',
     middleware.stripToken,
     middleware.verifyToken ,
     controller.RemoveFromFavorites
