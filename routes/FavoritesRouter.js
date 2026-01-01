@@ -12,7 +12,7 @@ router.post(
 )
 
 router.get(
-    '',
+    '/',
     middleware.stripToken,
     middleware.verifyToken ,
     controller.GetAllFavorites
