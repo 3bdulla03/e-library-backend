@@ -4,8 +4,6 @@ const middleware = require('../middleware')
 
 router.get('/:bookId', 
     middleware.stripToken,
-    middleware.verifyToken,
-    controller.GetReviews
 )
 
 router.post('/:bookId',
