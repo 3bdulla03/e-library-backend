@@ -3,12 +3,14 @@ const Review = require('../models/review')
 const GetReviews = async (req, res) => {
 
     try {
-        console.log("Searching for Book ID:", req.params.bookId)
         const reviews = await Review.find({ bookId:req.params.bookId }).populate('userId')
-        res.send(reviews)}
+        console.log(reviews
+        )
+        res.send(reviews)
+    }
     catch (error) {
         throw error
-    }    
+    }
 }
 
 const CreateReview = async (req, res) => {
@@ -16,7 +18,7 @@ const CreateReview = async (req, res) => {
         const review = await Review.create({
             message: req.body.message,
             bookId: req.params.bookId,
-            user: req.user.id
+            userId: req.body.user.id
         })
         res.send(review)
     } catch (error) {

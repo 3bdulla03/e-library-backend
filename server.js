@@ -5,7 +5,7 @@ const cors = require('cors')
 const AuthRouter = require('./routes/AuthRouter')
 const ReviewsRouter = require("./routes/ReviewsRouter")
 const ReadingStatusRouter = require('./routes/ReadingStatusRouter')
-const FavoritesRouter = require('./routes/FavoritesRouter')  
+const FavoritesRouter = require('./routes/FavoritesRouter')
 
 const PORT = process.env.PORT || 3000
 
@@ -19,9 +19,9 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 
 app.use('/auth', AuthRouter)
-app.use('/favorites', FavoritesRouter)              
-app.use('/reading-status', ReadingStatusRouter )  
-app.use('/reviews', ReviewsRouter)               
+app.use('/favorites', FavoritesRouter)
+app.use('/reading-status', ReadingStatusRouter )
+app.use('/reviews', ReviewsRouter)
 
 app.use('/', (req, res) => {
   res.send(`Connected!`)
