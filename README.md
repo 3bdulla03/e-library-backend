@@ -17,7 +17,7 @@ A full-stack **MERN** (MongoDB, Express, React, Node.js) application that allows
 
 ## 🌍 Deployed Version
 
-*   **Live App:** [Link]
+*   **Live App:** [deployed-version](https://3aaa-library.surge.sh/)
 *   
 
 ## 🛠️ Tech Stack
