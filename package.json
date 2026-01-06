@@ -6,7 +6,8 @@
   "main": "server.js",
   "scripts": {
     "dev": "node --watch server.js",
-    "package-update": "npx npm-check-updates -u && npm install"
+    "package-update": "npx npm-check-updates -u && npm install",
+    "start": "npm run dev"
   },
   "dependencies": {
     "bcrypt": "^6.0.0",
@@ -19,4 +20,3 @@
     "nodemon": "^3.1.11"
   }
 }
-
