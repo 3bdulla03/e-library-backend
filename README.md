@@ -18,7 +18,6 @@ A full-stack **MERN** (MongoDB, Express, React, Node.js) application that allows
 ## 🌍 Deployed Version
 
 *   **Live App:** [deployed-version](https://3aaa-library.surge.sh/)
-*   
 
 ## 🛠️ Tech Stack
 
@@ -26,11 +25,15 @@ A full-stack **MERN** (MongoDB, Express, React, Node.js) application that allows
 *   **React (Vite):** Fast, component-based UI.
 *   **React Router DOM:** Client-side routing.
 *   **Axios:** HTTP client for API requests.
+*   **Front End Repo:** [front-end](https://github.com/3bdulla03/e-library-frontend)
 
 ### Backend
 *   **Node.js & Express:** RESTful API server.
 *   **MongoDB & Mongoose:** NoSQL database for storing users and reviews.
 *   **JWT (JSON Web Tokens):** Secure authentication middleware.
+
+## Trello
+* **Trello Link:** [trello](https://trello.com/invite/b/693a125e4a5ccdd391febc93/ATTI81eaeb34d3c151e2434c1d76d6b40784C3511497/library)
 
 ## 🧩 ERD (Entity Relationship Diagram)
 
